@@ -5,3 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  /* Primary colors */
+  --blue: #4369b2;
+  --mid-dark-blue: #3b5a9a;
+  --dark-blue: #35548b;
+}
