@@ -1,5 +1,5 @@
 # Book Room App
-This application allows you search open access research articles published worldwide using the [CORE](https://core.ac.uk/services#api) api.
+This application allows you know about Premier League teams, reading data from the [Premier League Standings](https://rapidapi.com/heisenbug/api/premier-league-live-scores/) api.
 
 
 ## Built With
@@ -10,7 +10,7 @@ This application allows you search open access research articles published world
 
 <!-- ## Live Demo
 
-[Live Demo Link](https://emmiiorji.github.io/book-room-app/) -->
+[Live Demo Link](https://emmiiorji.github.io/premier-league-app/) -->
 
 
 ## Getting Started
@@ -25,8 +25,8 @@ To get a local copy up and running follow these simple example steps.
 
 ## Setup
 
-- git clone `git@github.com:emmiiorji/books-room-app.git`
-- `cd books-room-app/`
+- git clone `git@github.com:emmiiorji/premier-league-app.git`
+- `cd premier-league-app/`
 - Run `npm install` to download required modules locally
 
 In the project directory, you can run:
