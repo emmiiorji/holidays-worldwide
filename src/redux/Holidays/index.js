@@ -8,6 +8,16 @@ const Actions = {
 
 const stateInit = [];
 
+// Reducer
+const reducer = (state = stateInit, action) => {
+  switch (action.type) {
+    case Actions.LOAD:
+      return [...action.payLoad];
+    default:
+      return state;
+  }
+};
+
 // Action Creators
 export const loadCountries = () => async (dispatch) => {
   const response = await axios.get(countries());
