@@ -10,7 +10,12 @@ const Actions = {
 const stateInit = {};
 
 const reducer = (state = stateInit, action = {}) => {
-  // Write reducer
+  switch (action.type) {
+    case Actions.LOAD:
+      return { ...action.payLoad };
+    default:
+      return state;
+  }
 };
 
 // Action creators
