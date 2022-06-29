@@ -9,6 +9,8 @@ const paramsGen = (params) => {
 };
 
 const calenderificBaseURL = () => 'https://calendarific.com/api/v2';
+const diseaseSHbaseURL = () => 'https://disease.sh/v3/covid-19';
 
 export const countries = () => `${calenderificBaseURL()}/countries/?api_key=${calenderificApiKey()}`;
 export const holidays = (params) => `${calenderificBaseURL()}/holidays/?api_key=${calenderificApiKey()}${paramsGen(params)}`;
+export const continents = () => `${diseaseSHbaseURL()}/continents`;
