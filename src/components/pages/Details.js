@@ -1,9 +1,9 @@
-import { FaAngleLeft } from 'react-icons/fa';
+import { VscChevronLeft } from 'react-icons/vsc';
 
 const Details = () => (
   <section>
     <button type="button">
-      <FaAngleLeft style={{ fontSize: '30px' }} />
+      <VscChevronLeft style={{ fontSize: '30px' }} />
     </button>
   </section>
 );
