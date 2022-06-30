@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { continents } from '../../services/APIs';
+import { continentsURL } from '../../services/APIs';
 
 // Actions
 const Actions = {
@@ -20,16 +20,16 @@ const reducer = (state = stateInit, action = {}) => {
 
 // Action creators
 export const loadContinents = () => async (dispatch) => {
-  const response = await axios.get(continents());
-  const continentsContries = {};
+  const response = await axios.get(continentsURL());
+  const continentsCountries = {};
   response.data.forEach((continent) => {
-    continentsContries[continent.continent] = continent.countries;
+    continentsCountries[continent.continent] = continent.countries;
   });
 
   if (response.status === 200) {
     dispatch({
       type: Actions.LOAD,
-      payLoad: continentsContries,
+      payLoad: continentsCountries,
     });
   }
 };
