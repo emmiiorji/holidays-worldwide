@@ -1,18 +1,18 @@
 import axios from 'axios';
-import { countries } from '../../services/APIs';
+import { countriesURL } from '../../services/APIs';
 
 // Actions
 const Actions = {
-  LOAD: 'worldwide-holidays-app/holidays/LOAD',
+  LOAD_BY_COUNTRIES: 'worldwide-holidays-app/holidays/LOAD_BY_COUNTRIES',
 };
 
-const stateInit = [];
+const stateInit = {};
 
 // Reducer
 const reducer = (state = stateInit, action) => {
   switch (action.type) {
-    case Actions.LOAD:
-      return [...action.payLoad];
+    case Actions.LOAD_BY_COUNTRIES:
+      return { ...action.payLoad };
     default:
       return state;
   }
@@ -20,12 +20,15 @@ const reducer = (state = stateInit, action) => {
 
 // Action Creators
 export const loadCountries = () => async (dispatch) => {
-  const response = await axios.get(countries());
+  const response = await axios.get(countriesURL());
   if (response.status === 200) {
-    const payLoad = response.data.response.countries;
+    const allCountries = {};
+    response.data.response.countries.forEach((country) => {
+      allCountries[country['iso-3166']] = country;
+    });
     dispatch({
-      type: Actions.LOAD,
-      payLoad,
+      type: Actions.LOAD_BY_COUNTRIES,
+      payLoad: allCountries,
     });
   }
 };
