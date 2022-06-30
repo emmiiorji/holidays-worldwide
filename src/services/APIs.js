@@ -14,3 +14,4 @@ const diseaseSHbaseURL = () => 'https://disease.sh/v3/covid-19';
 export const countriesURL = () => `${calenderificBaseURL()}/countries/?api_key=${calenderificApiKey()}`;
 export const holidaysURL = (params) => `${calenderificBaseURL()}/holidays/?api_key=${calenderificApiKey()}${paramsGen(params)}`;
 export const continentsURL = () => `${diseaseSHbaseURL()}/continents`;
+export const countriesInfoURL = () => `${diseaseSHbaseURL()}/countries`;
