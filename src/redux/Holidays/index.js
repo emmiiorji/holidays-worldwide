@@ -1,18 +1,32 @@
 import axios from 'axios';
-import { countries } from '../../services/APIs';
+import { countriesURL, countriesInfoURL } from '../../services/APIs';
 
 // Actions
 const Actions = {
-  LOAD: 'worldwide-holidays-app/holidays/LOAD',
+  LOAD_BY_COUNTRIES: 'worldwide-holidays-app/holidays/LOAD_BY_COUNTRIES',
+  ADD_FLAG: 'worldwide-holidays-app/holidays/ADD_FLAG',
 };
 
-const stateInit = [];
+const stateInit = {};
 
 // Reducer
 const reducer = (state = stateInit, action) => {
   switch (action.type) {
-    case Actions.LOAD:
-      return [...action.payLoad];
+    case Actions.LOAD_BY_COUNTRIES:
+      return { ...action.payLoad };
+    case Actions.ADD_FLAG: {
+      const allCountries = { ...state };
+      action.payLoad.forEach((country) => {
+        const { flag, iso2 } = country.countryInfo;
+        if (allCountries[iso2]) {
+          allCountries[iso2] = { ...allCountries[iso2], flag };
+        } else {
+          // Do nothing if the country isn't part of the countries that
+          // their holiday record is available
+        }
+      });
+      return allCountries;
+    }
     default:
       return state;
   }
@@ -20,12 +34,25 @@ const reducer = (state = stateInit, action) => {
 
 // Action Creators
 export const loadCountries = () => async (dispatch) => {
-  const response = await axios.get(countries());
+  const response = await axios.get(countriesURL());
   if (response.status === 200) {
-    const payLoad = response.data.response.countries;
+    const allCountries = {};
+    response.data.response.countries.forEach((country) => {
+      allCountries[country['iso-3166']] = country;
+    });
     dispatch({
-      type: Actions.LOAD,
-      payLoad,
+      type: Actions.LOAD_BY_COUNTRIES,
+      payLoad: allCountries,
+    });
+  }
+};
+
+export const addCountryFlag = () => async (dispatch) => {
+  const response = await axios.get(countriesInfoURL());
+  if (response.status === 200) {
+    dispatch({
+      type: Actions.ADD_FLAG,
+      payLoad: response.data,
     });
   }
 };

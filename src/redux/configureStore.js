@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import countries, { loadCountries } from './Holidays';
+import countries, { loadCountries, addCountryFlag } from './Holidays';
 import continents, { loadContinents } from './Continents';
 
 const rootReducer = combineReducers({
@@ -9,7 +9,11 @@ const rootReducer = combineReducers({
 
 const store = configureStore({ reducer: rootReducer });
 
-store.dispatch(loadCountries());
-store.dispatch(loadContinents());
+const storeInit = async () => {
+  store.dispatch(loadContinents());
+  await store.dispatch(loadCountries());
+  store.dispatch(addCountryFlag()); // Depends on loadCountries action creator
+};
+storeInit();
 
 export default store;
