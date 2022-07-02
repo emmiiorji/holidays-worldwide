@@ -70,4 +70,20 @@ export const addCountryFlag = () => async (dispatch) => {
   }
 };
 
+export const loadHolidays = ({ country, year }) => async (dispatch) => {
+  const response = await axios.get(holidaysURL({ country, year }));
+  // console.log(response);
+  const { holidays } = response.data.response;
+  if (response.status === 200) {
+    dispatch({
+      type: Actions.LOAD_HOLIDAYS,
+      payLoad: {
+        countryISO2Code: country,
+        countryHolidays: holidays,
+        year,
+      },
+    });
+  }
+};
+
 export default reducer;
