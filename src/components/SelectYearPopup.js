@@ -1,10 +1,14 @@
 import { FaTimes } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux/es/exports';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 
 const SelectYearPopup = ({ display, hidePopup, countrySelected }) => {
-  (
+  const countries = useSelector((state) => state.countries);
+  const dispatch = useDispatch();
+
+  return (
     <div className="popupOverlay" style={{ display }}>
       <div className="popupContainer">
         <FaTimes onClick={() => hidePopup()} className="closeBu" />
