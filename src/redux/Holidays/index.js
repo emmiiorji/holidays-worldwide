@@ -1,22 +1,24 @@
 import axios from 'axios';
-import { countriesURL, countriesInfoURL } from '../../services/APIs';
+import { countriesURL, countriesInfoURL, holidaysURL } from '../../services/APIs';
 
 // Actions
 const Actions = {
   LOAD_BY_COUNTRIES: 'worldwide-holidays-app/holidays/LOAD_BY_COUNTRIES',
   ADD_FLAG: 'worldwide-holidays-app/holidays/ADD_FLAG',
+  LOAD_HOLIDAYS: 'worldwide-holidays-app/holidays/LOAD_HOLIDAY',
 };
 
 const stateInit = {};
 
 // Reducer
 const reducer = (state = stateInit, action) => {
+  const { payLoad } = action;
   switch (action.type) {
     case Actions.LOAD_BY_COUNTRIES:
-      return { ...action.payLoad };
+      return { ...payLoad };
     case Actions.ADD_FLAG: {
       const allCountries = { ...state };
-      action.payLoad.forEach((country) => {
+      payLoad.forEach((country) => {
         const { flag, iso2 } = country.countryInfo;
         if (allCountries[iso2]) {
           allCountries[iso2] = { ...allCountries[iso2], flag };
