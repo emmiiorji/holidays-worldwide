@@ -32,14 +32,11 @@ const SelectYearPopup = ({ display, hidePopup, countrySelected }) => {
     <div className="popupOverlay" style={{ display }}>
       <div className="popupContainer">
         <FaTimes onClick={() => hidePopup()} className="closeBu" />
-        {/* <div className="selectYearPopup"> */}
         <form className="selectYearPopup" onSubmit={handleShowHoliday}>
           <p>Select Year</p>
           <Datetime dateFormat="YYYY" timeFormat={false} closeOnSelect onChange={handleDateChange} />
-          {/* <input type="date" id="year" onChange={handleChange} /> */}
           <input type="submit" value="See Holidays" />
         </form>
-        {/* </div> */}
       </div>
     </div>
   );
