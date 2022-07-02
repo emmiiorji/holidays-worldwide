@@ -29,6 +29,17 @@ const reducer = (state = stateInit, action) => {
       });
       return allCountries;
     }
+    case Actions.LOAD_HOLIDAYS: {
+      const { countryISO2Code, year, countryHolidays } = payLoad;
+      const holidays = state[countryISO2Code].holidays || {};
+      return {
+        ...state,
+        [countryISO2Code]: {
+          ...state[countryISO2Code],
+          holidays: { ...holidays, [year]: countryHolidays },
+        },
+      };
+    }
     default:
       return state;
   }
