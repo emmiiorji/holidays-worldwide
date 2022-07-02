@@ -21,4 +21,10 @@ const SelectYearPopup = ({ display, hidePopup, countrySelected }) => {
   );
 };
 
+SelectYearPopup.propTypes = {
+  display: PropTypes.string.isRequired,
+  hidePopup: PropTypes.func.isRequired,
+  countrySelected: PropTypes.string.isRequired,
+};
+
 export default SelectYearPopup;
