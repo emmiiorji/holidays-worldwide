@@ -45,3 +45,55 @@ main h2 {
   font-size: 14px;
   font-weight: 200;
 }
+
+.showCountries {
+  margin-top: 40px;
+}
+
+.filterBar {
+  height: 40px;
+  background: rgba(53, 84, 139, 0.4);
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  margin-bottom: 40px;
+}
+
+.countriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  gap: 15px;
+  justify-content: space-around;
+  padding: 0 5%;
+}
+
+.dropdown {
+
+}
+
+.showCountry {
+  text-decoration: none;
+  color: var(--white);
+  width: 30%;
+  max-width: 200px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* .showCountry {
+  justify-content: space-between;
+} */
+
+.showCountry img {
+  margin-bottom: 10px;
+}
+
+.countryFlag {
+  width: 100%;
+  max-height: 150px;
+}
