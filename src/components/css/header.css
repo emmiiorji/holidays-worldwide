@@ -1,6 +1,6 @@
 header {
   display: flex;
-  background: var(--blue);;
+  background: var(--blue);
   box-shadow: 2px -2px 12px 1px var(--dark-blue);
   padding: 10px 5%;
 }
