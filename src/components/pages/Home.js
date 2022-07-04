@@ -11,6 +11,12 @@ const Home = () => {
 
   const getObjectLength = (object) => Object.keys(object).length;
 
+  const statsToShow = [
+    { name: 'Total Recorded', value: getTotalHolidays(countries) },
+    { name: 'Countries', value: getObjectLength(countries) },
+    { name: 'Continents', value: getObjectLength(continents) },
+  ];
+
   return (
     <>
       <Header />
