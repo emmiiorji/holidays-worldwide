@@ -1,5 +1,8 @@
 import { useSelector } from 'react-redux/es/exports';
+import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header';
+import Stat from '../Stat';
+import '../css/home.css';
 
 const Home = () => {
   const state = useSelector((state) => state);
@@ -18,13 +21,20 @@ const Home = () => {
   ];
 
   return (
-    <>
-      <Header />
-      <section>
-        <h1>Welcome</h1>
-      </section>
-    </>
-
+    <div className="wrapper">
+      <div className="overlay">
+        <Header />
+        <main>
+          <h2>Coverage Stats</h2>
+          <section className="showStats">
+            {statsToShow.map((statToShow) => {
+              const { name, value } = statToShow;
+              return <Stat key={uuidv4()} name={name} value={value} />;
+            })}
+          </section>
+        </main>
+      </div>
+    </div>
   );
 };
 
