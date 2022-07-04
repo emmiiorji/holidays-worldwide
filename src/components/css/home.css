@@ -1,0 +1,24 @@
+.wrapper {
+  min-height: 100vh;
+  background: url('https://res.cloudinary.com/emmii/image/upload/v1656695358/general/seamless-blizzard-pattern1_mpjqdh.jpg');
+}
+
+.overlay {
+  min-height: 100vh; 
+  background: rgba(67, 105, 178, 0.85);
+  position: relative;
+}
+
+main {
+  /* margin: 5px; */
+}
+
+main h2 {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0px 0px 0px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
