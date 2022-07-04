@@ -9,6 +9,8 @@ const Home = () => {
     { total: acc.total + country.total_holidays }
   ), { total: 0 }).total.toLocaleString();
 
+  const getObjectLength = (object) => Object.keys(object).length;
+
   return (
     <>
       <Header />
