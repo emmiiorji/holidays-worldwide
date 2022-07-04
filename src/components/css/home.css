@@ -22,3 +22,26 @@ main h2 {
   font-weight: 400;
   text-transform: uppercase;
 }
+
+.showStats {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 5% 0 5%;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.statItem {
+  /* min-width: 100px */
+}
+
+.value {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.statName {
+  font-size: 14px;
+  font-weight: 200;
+}
