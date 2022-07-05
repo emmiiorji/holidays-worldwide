@@ -2,7 +2,7 @@ import { VscChevronLeft } from 'react-icons/vsc';
 import { useSelector } from 'react-redux/es/exports';
 import { useNavigate } from 'react-router-dom';
 
-const Details = () => {
+const HolidaysDetails = () => {
   const navigate = useNavigate();
   const countries = useSelector((state) => state.countries);
   console.log(countries);
@@ -15,4 +15,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default HolidaysDetails;
