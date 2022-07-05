@@ -7,6 +7,7 @@ import Datetime from 'react-datetime';
 import moment from 'moment';
 import { loadHolidays } from '../redux/Holidays';
 import 'react-datetime/css/react-datetime.css';
+import './css/selectYearPopup.css';
 
 const SelectYearPopup = ({ display, hidePopup, countrySelected }) => {
   const countries = useSelector((state) => state.countries);
@@ -24,7 +25,7 @@ const SelectYearPopup = ({ display, hidePopup, countrySelected }) => {
     e.preventDefault();
     if (year) {
       dispatch(loadHolidays({ country: countrySelected, year }));
-      navigate(`/holidays/${countries[countrySelected].country_name.toLowerCase()}`);
+      navigate(`/holidays/${countries[countrySelected].country_name}`);
     }
   };
 
