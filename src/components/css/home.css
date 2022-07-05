@@ -62,7 +62,6 @@ main h2 {
 .countriesContainer {
   display: flex;
   flex-wrap: wrap;
-  padding: 5px;
   gap: 15px;
   justify-content: space-around;
   padding: 0 5%;
