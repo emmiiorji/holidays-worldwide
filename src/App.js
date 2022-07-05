@@ -8,8 +8,8 @@ function App() {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route path="/holidays/:country" element={<HolidaysDetails />} />
-      <Route path="/notfound" element={<NotFound />} />
+      <Route path="/holidays/:countryName" element={<HolidaysDetails />} />
+      <Route path="/404" element={<NotFound />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
