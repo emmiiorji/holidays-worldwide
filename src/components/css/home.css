@@ -6,7 +6,7 @@
 .overlay {
   min-height: 100vh;
   background: rgba(67, 105, 178, 0.85);
-  position: relative;
+  /* position: relative; */
 }
 
 main {
@@ -87,62 +87,4 @@ main h2 {
 .countryFlag {
   width: 100%;
   max-height: 150px;
-}
-
-.popupOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: auto;
-}
-
-.popupContainer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  color: rgba(0, 0, 0, 0.9);
-}
-
-.closeBu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  color: #fc4d2d;
-  cursor: pointer;
-}
-
-.selectYearPopup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 300px;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 7px;
-  background: var(--white);
-}
-
-.selectYearPopup * {
-  padding: 5px;
-  width: calc(100% - 10px);
-}
-
-.selectYearPopup input[type='submit'] {
-  background: var(--dark-blue);
-  border: none;
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 700;
-  padding: 10px;
-  width: 50%;
-  cursor: pointer;
 }
