@@ -31,10 +31,6 @@ main h2 {
   gap: 20px;
 }
 
-.statItem {
-  /* min-width: 100px */
-}
-
 .value {
   text-align: center;
   font-size: 24px;
