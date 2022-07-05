@@ -140,14 +140,6 @@ main h2 {
   width: calc(100% - 10px);
 }
 
-/* .selectYearPopup a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-} */
-
 .selectYearPopup input[type='submit'] {
   background: var(--dark-blue);
   border: none;
