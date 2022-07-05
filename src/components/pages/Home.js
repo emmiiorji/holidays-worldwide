@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header';
 import Stat from '../Stat';
 import '../css/home.css';
+import SelectYearPopup from '../SelectYearPopup';
 
 const Home = () => {
   const state = useSelector((state) => state);
@@ -64,6 +65,11 @@ const Home = () => {
             </div>
           </section>
         </main>
+        <SelectYearPopup
+          display={displayPopup}
+          hidePopup={() => setDisplayPopup('none')}
+          countrySelected={countrySelected}
+        />
       </div>
     </div>
   );
