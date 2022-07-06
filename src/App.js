@@ -9,6 +9,7 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route path="/holidays/:countryName" element={<HolidaysDetails />} />
+      <Route path="/holidays/:countryName/:year" element={<HolidaysDetails />} />
       <Route path="/404" element={<NotFound />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

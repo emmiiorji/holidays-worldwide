@@ -25,7 +25,7 @@ const SelectYearPopup = ({ display, hidePopup, countrySelected }) => {
     e.preventDefault();
     if (year) {
       dispatch(loadHolidays({ country: countrySelected, year }));
-      navigate(`/holidays/${countries[countrySelected].country_name}`);
+      navigate(`/holidays/${countries[countrySelected].country_name}/${year}`);
     }
   };
 
