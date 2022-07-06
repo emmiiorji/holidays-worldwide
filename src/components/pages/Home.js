@@ -29,7 +29,7 @@ const Home = () => {
     <div className="wrapper">
       <div className="overlay">
         <Header />
-        <main>
+        <main className="homeMain">
           <h2>Coverage Stats</h2>
           <section className="showStats">
             {statsToShow.map((statToShow) => {

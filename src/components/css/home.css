@@ -9,11 +9,7 @@
   /* position: relative; */
 }
 
-main {
-  /* margin: 5px; */
-}
-
-main h2 {
+.homeMain h2 {
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
