@@ -9,6 +9,7 @@ const HolidaysDetails = () => {
   const navigate = useNavigate();
   const countries = useSelector((state) => state.countries);
   console.log(countries);
+  const [displayPopup, setDisplayPopup] = useState('flex');
   const { countryName } = useParams();
   let countryCode = '';
   const [country, ...rest] = Object.values(countries).filter((selectedCountry) => {
@@ -27,6 +28,17 @@ const HolidaysDetails = () => {
       }
     }
   });
+
+  if (getObjectLength(countries) && !country.holidays) {
+    // Ask to enter year if a valid country url was visited but didn't come through the home page
+    return (
+      <SelectYearPopup
+        display={displayPopup}
+        hidePopup={() => setDisplayPopup('none')}
+        countrySelected={countryCode}
+      />
+    );
+  }
 
   return (
     <section>
