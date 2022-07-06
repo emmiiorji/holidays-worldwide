@@ -39,6 +39,7 @@ const Home = () => {
           </section>
           <section className="showCountries">
             <div className="filterBar">
+              <input type="text" className="searchBox" placeholder="Search Country" />
               <FaRegArrowAltCircleDown className="dropdown" />
             </div>
             <div className="countriesContainer">
