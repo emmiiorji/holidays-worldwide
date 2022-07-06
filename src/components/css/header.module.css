@@ -1,18 +1,18 @@
-header {
+.header {
   display: flex;
   background: var(--blue);
   box-shadow: 2px -2px 12px 1px var(--dark-blue);
   padding: 10px 5%;
 }
 
-.headerMain {
+.header .headerMain {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.heading {
+.header .heading {
   font-size: 1.5rem;
   text-align: center;
 }
