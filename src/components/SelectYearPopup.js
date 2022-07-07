@@ -10,7 +10,7 @@ import 'react-datetime/css/react-datetime.css';
 import './css/selectYearPopup.css';
 
 const SelectYearPopup = ({ display, hidePopup, countrySelected }) => {
-  const countries = useSelector((state) => state.countries);
+  const countries = useSelector((state) => state.countries.allCountries);
   const [year, setYear] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
