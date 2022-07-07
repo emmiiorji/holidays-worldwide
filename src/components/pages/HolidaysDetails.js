@@ -1,5 +1,5 @@
 import { VscChevronLeft } from 'react-icons/vsc';
-import { useSelector } from 'react-redux/es/exports';
+import { shallowEqual, useSelector } from 'react-redux/es/exports';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getObjectLength } from './Home';
@@ -10,27 +10,30 @@ import '../css/holidaysDetails.css';
 
 const HolidaysDetails = () => {
   const navigate = useNavigate();
-  const countries = useSelector((state) => state.countries);
+  // const [filteredCountries, setFilteredCountries] = useState([]);
+  const { allCountries, countriesISO2Map } = useSelector((state) => state.countries, shallowEqual);
   const { countryName, year } = useParams();
   let countryCode = '';
-  const [country, ...rest] = Object.values(countries).filter((selectedCountry) => {
-    if (selectedCountry.country_name.toLowerCase() === countryName.toLocaleLowerCase()) {
-      countryCode = selectedCountry['iso-3166'];
-      return true;
+
+  Object.entries(countriesISO2Map).every(([iso2, name]) => {
+    if (countryName.toLowerCase() === name.toLowerCase()) {
+      countryCode = iso2;
+      return false;
     }
-    return false;
+    return true;
   });
-  rest.length = 0;
+
+  const country = allCountries[countryCode];
 
   useEffect(() => {
-    if (getObjectLength(countries)) {
+    if (getObjectLength(allCountries)) {
       if (!country) {
         navigate('/404');
       }
     }
   });
 
-  if (getObjectLength(countries)) {
+  if (getObjectLength(allCountries)) {
     if (!country.holidays || !country.holidays[year]) {
       // Ask to enter year if a valid country url was visited but didn't come through the home page
       return (
