@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header';
 import Stat from '../Stat';
-import Dropdown from '../Dropdown';
 import '../css/home.css';
 import SelectYearPopup from '../SelectYearPopup';
+import FilterBar from '../FilterBar';
 
 export const getObjectLength = (object) => Object.keys(object).length;
 
@@ -40,10 +40,7 @@ const Home = () => {
             })}
           </section>
           <section className="showCountries">
-            <div className="filterBar">
-              <input type="text" className="searchBox" placeholder="Search Country" />
-              <Dropdown options={['All', ...continentNames]} />
-            </div>
+            <FilterBar continentNames={continentNames} />
             <div className="countriesContainer">
               {Object.values(countries).map((country) => {
                 const altFlagImage = 'https://res.cloudinary.com/emmii/image/upload/v1656765109/general/inserted-red-color-sticker-label-with-word-unavailable1_vavx1n.jpg';
