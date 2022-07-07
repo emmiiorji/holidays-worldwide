@@ -8,7 +8,10 @@ const Actions = {
   LOAD_HOLIDAYS: 'worldwide-holidays-app/holidays/LOAD_HOLIDAY',
 };
 
-const stateInit = {};
+const stateInit = {
+  allCountries: {},
+  countriesISO2Map: {},
+};
 
 // Reducer
 const reducer = (state = stateInit, action) => {
@@ -17,7 +20,7 @@ const reducer = (state = stateInit, action) => {
     case Actions.LOAD_BY_COUNTRIES:
       return { ...payLoad };
     case Actions.ADD_FLAG: {
-      const allCountries = { ...state };
+      const allCountries = { ...state.allCountries };
       payLoad.forEach((country) => {
         const { flag, iso2 } = country.countryInfo;
         if (allCountries[iso2]) {
@@ -27,16 +30,19 @@ const reducer = (state = stateInit, action) => {
           // their holiday record is available
         }
       });
-      return allCountries;
+      return { ...state, allCountries };
     }
     case Actions.LOAD_HOLIDAYS: {
       const { countryISO2Code, year, countryHolidays } = payLoad;
-      const holidays = state[countryISO2Code].holidays || {};
+      const holidays = state.allCountries[countryISO2Code].holidays || {};
       return {
         ...state,
-        [countryISO2Code]: {
-          ...state[countryISO2Code],
-          holidays: { ...holidays, [year]: countryHolidays },
+        allCountries: {
+          ...state.allCountries,
+          [countryISO2Code]: {
+            ...state.allCountries[countryISO2Code],
+            holidays: { ...holidays, [year]: countryHolidays },
+          },
         },
       };
     }
@@ -50,12 +56,14 @@ export const loadCountries = () => async (dispatch) => {
   const response = await axios.get(countriesURL());
   if (response.status === 200) {
     const allCountries = {};
+    const countriesISO2Map = {};
     response.data.response.countries.forEach((country) => {
       allCountries[country['iso-3166']] = country;
+      countriesISO2Map[country['iso-3166']] = country.country_name;
     });
     dispatch({
       type: Actions.LOAD_BY_COUNTRIES,
-      payLoad: allCountries,
+      payLoad: { allCountries, countriesISO2Map },
     });
   }
 };
