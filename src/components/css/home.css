@@ -43,23 +43,42 @@
 }
 
 .filterBar {
-  height: 40px;
   background: rgba(53, 84, 139, 0.4);
   display: flex;
   align-items: center;
-  padding: 0 5%;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 5%;
   margin-bottom: 40px;
-  position: relative;
 }
 
 .searchBox {
   padding: 5px 10px;
-  margin: 5px 10px;
   border-radius: 5px;
   border: none;
+  flex-grow: 1;
+  max-width: 300px;
 }
 
 .searchBox:focus {
+  outline: none;
+}
+
+.continentsDropdown {
+  padding: 3.5px 10px;
+  border: none;
+  border-radius: 5px;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.continentsDropdown option {
+  /* margin: 10px 0;
+  background: red; */
+}
+
+.continentsDropdown:focus {
   outline: none;
 }
 
