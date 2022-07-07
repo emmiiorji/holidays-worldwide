@@ -42,7 +42,7 @@ const Home = () => {
           <section className="showCountries">
             <div className="filterBar">
               <input type="text" className="searchBox" placeholder="Search Country" />
-              <Dropdown options={continentNames} />
+              <Dropdown options={['All', ...continentNames]} />
             </div>
             <div className="countriesContainer">
               {Object.values(countries).map((country) => {
