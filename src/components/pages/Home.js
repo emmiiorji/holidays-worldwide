@@ -20,7 +20,10 @@ const Home = () => {
   const [selectedContinent, setSelectedContinent] = useState('All');
 
   const { countries, continents } = state;
+  const { allCountries, countriesISO2Map } = countries;
   const continentNames = Object.keys(continents);
+
+  const allCountriesNames = Object.values(countriesISO2Map);
 
   const getTotalHolidays = (countries) => Object.values(countries).reduce((acc, country) => (
     { total: acc.total + country.total_holidays }
