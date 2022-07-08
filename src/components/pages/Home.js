@@ -25,6 +25,20 @@ const Home = () => {
 
   const allCountriesNames = Object.values(countriesISO2Map);
 
+  const findSearch = (searchText, selectedContinent) => {
+    let continentsCountries = selectedContinent === 'All' ? allCountriesNames : continents[selectedContinent];
+    continentsCountries = continentsCountries.join('^&*/!').toLowerCase().split('^&*/!');
+
+    const choiceCountries = {};
+    Object.entries(countries.allCountries).forEach(([iso2, country]) => {
+      if (continentsCountries.includes(country.country_name.toLowerCase())
+        && country.country_name.toLowerCase().includes(searchText.toLowerCase())) {
+        choiceCountries[iso2] = countries.allCountries[iso2];
+      }
+    });
+    return choiceCountries;
+  };
+
   const handleFilterChange = (e, filterElement) => {
     const { value } = e.target;
     if (filterElement === 'SearchBox') {
