@@ -25,6 +25,16 @@ const Home = () => {
 
   const allCountriesNames = Object.values(countriesISO2Map);
 
+  const handleFilterChange = (e, filterElement) => {
+    const { value } = e.target;
+    if (filterElement === 'SearchBox') {
+      setSearchText(value.trim());
+      e.target.value = value.trim();
+    } else {
+      setSelectedContinent(value);
+    }
+  };
+
   const getTotalHolidays = (countries) => Object.values(countries).reduce((acc, country) => (
     { total: acc.total + country.total_holidays }
   ), { total: 0 }).total.toLocaleString();
