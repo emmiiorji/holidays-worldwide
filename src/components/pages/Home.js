@@ -1,5 +1,4 @@
 import { shallowEqual, useSelector } from 'react-redux/es/exports';
-// import { FaRegArrowAltCircleDown } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header';
