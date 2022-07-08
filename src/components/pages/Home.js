@@ -1,6 +1,6 @@
-import { useSelector } from 'react-redux/es/exports';
+import { shallowEqual, useSelector } from 'react-redux/es/exports';
 // import { FaRegArrowAltCircleDown } from 'react-icons/fa';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header';
 import Stat from '../Stat';
@@ -11,9 +11,14 @@ import FilterBar from '../FilterBar';
 export const getObjectLength = (object) => Object.keys(object).length;
 
 const Home = () => {
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => state, shallowEqual);
+
   const [displayPopup, setDisplayPopup] = useState('none');
   const [countrySelected, setCountrySelected] = useState('');
+  const [choiceCountries, setChoiceCountries] = useState({});
+  const [searchText, setSearchText] = useState('');
+  const [selectedContinent, setSelectedContinent] = useState('All');
+
   const { countries, continents } = state;
   const continentNames = Object.keys(continents);
 
@@ -22,8 +27,8 @@ const Home = () => {
   ), { total: 0 }).total.toLocaleString();
 
   const statsToShow = [
-    { name: 'Total Recorded', value: getTotalHolidays(countries) },
-    { name: 'Countries', value: getObjectLength(countries) },
+    { name: 'Total Recorded', value: getTotalHolidays(allCountries) },
+    { name: 'Countries', value: getObjectLength(allCountries) },
     { name: 'Continents', value: getObjectLength(continents) },
   ];
 
@@ -40,9 +45,13 @@ const Home = () => {
             })}
           </section>
           <section className="showCountries">
-            <FilterBar continentNames={continentNames} />
+            <FilterBar
+              handleChange={handleFilterChange}
+              continentNames={continentNames}
+              selectedContinent={selectedContinent}
+            />
             <div className="countriesContainer">
-              {Object.values(countries).map((country) => {
+              {Object.values(choiceCountries).map((country) => {
                 const altFlagImage = 'https://res.cloudinary.com/emmii/image/upload/v1656765109/general/inserted-red-color-sticker-label-with-word-unavailable1_vavx1n.jpg';
                 return (
                   <button
