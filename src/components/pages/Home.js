@@ -49,6 +49,10 @@ const Home = () => {
     }
   };
 
+  useEffect(() => {
+    setChoiceCountries({ ...findSearch(searchText, selectedContinent) });
+  }, [searchText, selectedContinent, state.countries.allCountries]);
+
   const getTotalHolidays = (countries) => Object.values(countries).reduce((acc, country) => (
     { total: acc.total + country.total_holidays }
   ), { total: 0 }).total.toLocaleString();
