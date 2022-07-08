@@ -73,11 +73,6 @@
   max-width: 300px;
 }
 
-.continentsDropdown option {
-  /* margin: 10px 0;
-  background: red; */
-}
-
 .continentsDropdown:focus {
   outline: none;
 }
