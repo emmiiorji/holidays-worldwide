@@ -34,8 +34,8 @@
   background: rgba(59, 91, 154, 0.5);
 }
 
-.contentHeader h2{
-  margin: 0px;
+.contentHeader h2 {
+  margin: 0;
   text-align: left;
   padding: 10px;
   font-size: 1rem;

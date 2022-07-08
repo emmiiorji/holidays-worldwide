@@ -6,7 +6,6 @@
 .overlay {
   min-height: 100vh;
   background: rgba(67, 105, 178, 0.85);
-  /* position: relative; */
 }
 
 .homeMain h2 {
