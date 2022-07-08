@@ -10,7 +10,6 @@ import '../css/holidaysDetails.css';
 
 const HolidaysDetails = () => {
   const navigate = useNavigate();
-  // const [filteredCountries, setFilteredCountries] = useState([]);
   const { allCountries, countriesISO2Map } = useSelector((state) => state.countries, shallowEqual);
   const { countryName, year } = useParams();
   let countryCode = '';
