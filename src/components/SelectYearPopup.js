@@ -1,8 +1,8 @@
 import { FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux/es/exports';
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
 import Datetime from 'react-datetime';
 import moment from 'moment';
 import { loadHolidays } from '../redux/Holidays';
