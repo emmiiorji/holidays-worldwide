@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Home from '../components/pages/Home';
 import store from '../redux/configureStore';
 
-it('matches snapshot', () => {
+it('component renders properly', () => {
   const tree = renderer.create(
     <Provider store={store}>
       <Router>
