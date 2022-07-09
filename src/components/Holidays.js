@@ -9,7 +9,7 @@ const Holidays = ({ holidays }) => (
         <th>Date</th>
         <th>Description</th>
         <th>Name</th>
-        <th>type</th>
+        <th>Type</th>
       </tr>
     </thead>
     <tbody>
