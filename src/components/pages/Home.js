@@ -1,5 +1,5 @@
-import { shallowEqual, useSelector } from 'react-redux/es/exports';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header';
 import Stat from '../Stat';
@@ -63,7 +63,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="wrapper">
+    <div data-testid="home" className="wrapper">
       <div className="overlay">
         <Header />
         <main className="homeMain">

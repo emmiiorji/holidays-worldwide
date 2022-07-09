@@ -1,7 +1,7 @@
+import React, { useEffect } from 'react';
 import { VscChevronLeft } from 'react-icons/vsc';
-import { shallowEqual, useSelector } from 'react-redux/es/exports';
+import { shallowEqual, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
 import { getObjectLength } from './Home';
 import Holidays from '../Holidays';
 import SelectYearPopup from '../SelectYearPopup';
