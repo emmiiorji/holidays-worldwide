@@ -1,13 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home';
-import Details from './components/pages/Details';
+import HolidaysDetails from './components/pages/HolidaysDetails';
+import NotFound from './components/pages/NotFound';
 
 function App() {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route path="/countries/:name" element={<Details />} />
+      <Route path="/holidays/:countryName" element={<HolidaysDetails />} />
+      <Route path="/holidays/:countryName/:year" element={<HolidaysDetails />} />
+      <Route path="/404" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

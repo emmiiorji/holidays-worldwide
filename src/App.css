@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -11,4 +13,11 @@
   --blue: #4369b2;
   --mid-dark-blue: #3b5a9a;
   --dark-blue: #35548b;
+  --white: #fff;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: var(--blue);
+  color: var(--white);
 }
