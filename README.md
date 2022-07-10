@@ -1,5 +1,5 @@
-# Book Room App
-This application allows you know about Premier League teams, reading data from the [Premier League Standings](https://rapidapi.com/heisenbug/api/premier-league-live-scores/) api.
+# Worldwide Holidays App
+This application developed with React/Redux lets you view global holidays from one point, reading data from the [Calendarific](https://calendarific.com/) api.
 
 
 ## Built With
@@ -8,9 +8,9 @@ This application allows you know about Premier League teams, reading data from t
 - CSS
 - React and Redux
 
-<!-- ## Live Demo
+## Live Demo
 
-[Live Demo Link](https://emmiiorji.github.io/premier-league-app/) -->
+[Live Demo Link](https://worldwide-holidays-app.herokuapp.com/)
 
 
 ## Getting Started
@@ -28,6 +28,7 @@ To get a local copy up and running follow these simple example steps.
 - git clone `git@github.com:emmiiorji/premier-league-app.git`
 - `cd premier-league-app/`
 - Run `npm install` to download required modules locally
+- Create an account at [Calendarific](https://calendarific.com/) and save your API key in an environment variable (.env file) with key: `REACT_APP_CALENDERIFIC_API_KEY`. E.g REACT_APP_CALENDERIFIC_API_KEY=XXXXXXXX
 
 In the project directory, you can run:
 
@@ -93,8 +94,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](https://www.microverse.org/)
-- Coding Partners
-- Code Reviewers
+- The design was inspired by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License
 
