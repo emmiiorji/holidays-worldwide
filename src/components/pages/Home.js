@@ -82,7 +82,7 @@ const Home = () => {
             />
             <div className="countriesContainer">
               {Object.values(choiceCountries).map((country) => {
-                const altFlagImage = 'https://res.cloudinary.com/emmii/image/upload/v1656765109/general/inserted-red-color-sticker-label-with-word-unavailable1_vavx1n.jpg';
+                const altFlagImage = 'https://res.cloudinary.com/emmii/image/upload/v1657434212/general/inserted-red-color-sticker-label-with-word-unavailable2_brckxe.jpg';
                 return (
                   <button
                     className="showCountry"
