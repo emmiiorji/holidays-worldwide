@@ -10,7 +10,7 @@ This application developed with React/Redux lets you view global holidays from o
 
 ## Live Demo
 
-[Live Demo Link](https://worldwide-holidays-app.herokuapp.com/)
+Here's a [link](https://worldwide-holidays-app.herokuapp.com/) to a hosted version of the application.
 
 
 ## Getting Started
