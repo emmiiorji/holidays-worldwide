@@ -1,5 +1,5 @@
 # Worldwide Holidays App
-This application developed with React/Redux lets you view global holidays from one point, reading data from the [Calendarific](https://calendarific.com/) api. The countries' data is loaded from [disease.sh](https://disease.sh/)'s Open Disease Data API.
+This is a mobile web application developed with React/Redux, that lets you view global holidays from one point, reading data from the [Calendarific](https://calendarific.com/) API. The countries' data is loaded from [disease.sh](https://disease.sh/)'s Open Disease Data API.
 
 
 ## Built With
