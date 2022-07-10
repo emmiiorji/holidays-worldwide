@@ -1,0 +1,107 @@
+.wrapper {
+  min-height: 100vh;
+  background: url('https://res.cloudinary.com/emmii/image/upload/v1656695358/general/seamless-blizzard-pattern1_mpjqdh.jpg');
+}
+
+.overlay {
+  min-height: 100vh;
+  background: rgba(67, 105, 178, 0.85);
+}
+
+.homeMain h2 {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0 0 0;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.showStats {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 5% 0 5%;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.value {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.statName {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.showCountries {
+  margin-top: 40px;
+}
+
+.filterBar {
+  background: rgba(53, 84, 139, 0.4);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 5%;
+  margin-bottom: 40px;
+}
+
+.searchBox {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.searchBox:focus {
+  outline: none;
+}
+
+.continentsDropdown {
+  padding: 3.5px 10px;
+  border: none;
+  border-radius: 5px;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.continentsDropdown:focus {
+  outline: none;
+}
+
+.countriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-around;
+  padding: 0 5%;
+}
+
+.showCountry {
+  text-decoration: none;
+  color: var(--white);
+  width: 30%;
+  max-width: 200px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.showCountry img {
+  margin-bottom: 10px;
+}
+
+.countryFlag {
+  width: 100%;
+  max-height: 150px;
+}
