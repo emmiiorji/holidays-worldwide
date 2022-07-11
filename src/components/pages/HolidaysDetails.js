@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { VscChevronLeft } from 'react-icons/vsc';
-import { shallowEqual, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getObjectLength } from './Home';
 import Holidays from '../Holidays';
@@ -10,7 +10,7 @@ import '../css/holidaysDetails.css';
 
 const HolidaysDetails = () => {
   const navigate = useNavigate();
-  const { allCountries, countriesISO2Map } = useSelector((state) => state.countries, shallowEqual);
+  const { allCountries, countriesISO2Map } = useSelector((state) => state.countries);
   const { countryName, year } = useParams();
   let countryCode = '';
 
