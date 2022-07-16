@@ -8,6 +8,11 @@ This is a mobile web application developed with React/Redux, that lets you view 
 - CSS
 - React and Redux
 
+## Video Demo
+
+https://user-images.githubusercontent.com/20554583/179355165-d4a5db75-61dd-4406-bf7c-008678f358c0.mp4
+
+
 ## Live Demo
 
 Here's a [link](https://worldwide-holidays-app.herokuapp.com/) to a hosted version of the application.
