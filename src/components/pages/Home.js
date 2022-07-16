@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { shallowEqual, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header';
 import Stat from '../Stat';
@@ -10,7 +10,7 @@ import FilterBar from '../FilterBar';
 export const getObjectLength = (object) => Object.keys(object).length;
 
 const Home = () => {
-  const state = useSelector((state) => state, shallowEqual);
+  const state = useSelector((state) => state);
 
   const [displayPopup, setDisplayPopup] = useState('none');
   const [countrySelected, setCountrySelected] = useState('');
