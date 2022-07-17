@@ -15,7 +15,7 @@ https://user-images.githubusercontent.com/20554583/179355165-d4a5db75-61dd-4406-
 
 ## Live Demo
 
-Here's a [link](https://worldwide-holidays-app.herokuapp.com/) to a hosted version of the application.
+Here's a [link](https://holidays-worldwide.herokuapp.com/) to a hosted version of the application.
 
 
 ## Getting Started
