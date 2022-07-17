@@ -7,7 +7,7 @@ const Header = () => (
       <FiMenu style={{ color: '#fff', width: '30px', height: '30px' }} />
     </div>
     <div className={styles.headerMain}>
-      <h1 className={styles.heading}>Worldwide Holidays</h1>
+      <h1 className={styles.heading}>Holidays Worldwide</h1>
     </div>
   </header>
 );
