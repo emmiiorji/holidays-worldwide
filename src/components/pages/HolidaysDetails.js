@@ -61,8 +61,7 @@ const HolidaysDetails = () => {
           <main className="mainContainer">
             <div className="contentHeader">
               <h2>
-                Holidays breakdown&nbsp; - &nbsp;
-                {year}
+                {`Holidays breakdown - ${year} (${holidays[year].length} holidays)`}
               </h2>
             </div>
             <div className="holidaysContainer">
