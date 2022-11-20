@@ -1,11 +1,13 @@
 .wrapper {
   min-height: 100vh;
   background: url('https://res.cloudinary.com/emmii/image/upload/v1656695358/general/seamless-blizzard-pattern1_mpjqdh.jpg');
+  max-width: 600px;
 }
 
 .overlay {
   min-height: 100vh;
   background: rgba(67, 105, 178, 0.85);
+  padding: 10px;
 }
 
 .homeMain h2 {
